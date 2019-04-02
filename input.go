@@ -6,7 +6,7 @@ package githubv4
 
 // Input represents one of the Input structs:
 //
-// AcceptBusinessMemberInvitationInput, AcceptTopicSuggestionInput, AddCommentInput, AddProjectCardInput, AddProjectColumnInput, AddPullRequestReviewCommentInput, AddPullRequestReviewInput, AddReactionInput, AddStarInput, CancelBusinessAdminInvitationInput, CancelBusinessBillingManagerInvitationInput, ChangeUserStatusInput, CloneProjectInput, ClosePullRequestInput, CommitAuthor, CommitContributionOrder, ContributionOrder, CreateBranchProtectionRuleInput, CreateContentAttachmentInput, CreateProjectInput, CreatePullRequestInput, DeclineTopicSuggestionInput, DeleteBranchProtectionRuleInput, DeleteIssueInput, DeleteProjectCardInput, DeleteProjectColumnInput, DeleteProjectInput, DeletePullRequestReviewCommentInput, DeletePullRequestReviewInput, DeploymentOrder, DismissPullRequestReviewInput, DraftPullRequestReviewComment, GistOrder, ImportProjectInput, InviteBusinessAdminInput, InviteBusinessBillingManagerInput, IssueOrder, LanguageOrder, LockLockableInput, MergePullRequestInput, MilestoneOrder, MinimizeCommentInput, MoveProjectCardInput, MoveProjectColumnInput, PinIssueInput, ProjectCardImport, ProjectColumnImport, ProjectOrder, PullRequestOrder, ReactionOrder, RefOrder, RegenerateBusinessIdentityProviderRecoveryCodesInput, ReleaseOrder, RemoveBusinessAdminInput, RemoveBusinessBillingManagerInput, RemoveBusinessIdentityProviderInput, RemoveOutsideCollaboratorInput, RemoveReactionInput, RemoveStarInput, ReopenPullRequestInput, RepositoryOrder, RequestReviewsInput, ResolveReviewThreadInput, SecurityAdvisoryIdentifierFilter, SecurityAdvisoryOrder, SecurityVulnerabilityOrder, SetBusinessIdentityProviderInput, StarOrder, SubmitPullRequestReviewInput, TeamMemberOrder, TeamOrder, TeamRepositoryOrder, UnlockLockableInput, UnminimizeCommentInput, UnpinIssueInput, UnresolveReviewThreadInput, UpdateBranchProtectionRuleInput, UpdateBusinessAllowPrivateRepositoryForkingSettingInput, UpdateBusinessDefaultRepositoryPermissionSettingInput, UpdateBusinessMembersCanChangeRepositoryVisibilitySettingInput, UpdateBusinessMembersCanCreateRepositoriesSettingInput, UpdateBusinessMembersCanDeleteIssuesSettingInput, UpdateBusinessMembersCanDeleteRepositoriesSettingInput, UpdateBusinessMembersCanInviteCollaboratorsSettingInput, UpdateBusinessOrganizationProjectsSettingInput, UpdateBusinessProfileInput, UpdateBusinessRepositoryProjectsSettingInput, UpdateBusinessTeamDiscussionsSettingInput, UpdateBusinessTwoFactorAuthenticationRequiredSettingInput, UpdateProjectCardInput, UpdateProjectColumnInput, UpdateProjectInput, UpdatePullRequestInput, UpdatePullRequestReviewCommentInput, UpdatePullRequestReviewInput, UpdateSubscriptionInput, UpdateTopicsInput, UserStatusOrder.
+// AcceptBusinessMemberInvitationInput, AcceptTopicSuggestionInput, AddCommentInput, AddProjectCardInput, AddProjectColumnInput, AddPullRequestReviewCommentInput, AddPullRequestReviewInput, AddReactionInput, AddStarInput, CancelBusinessAdminInvitationInput, CancelBusinessBillingManagerInvitationInput, ChangeUserStatusInput, CloneProjectInput, ClosePullRequestInput, CommitAuthor, CommitContributionOrder, ContributionOrder, CreateBranchProtectionRuleInput, CreateContentAttachmentInput, CreateProjectInput, CreatePullRequestInput, DeclineTopicSuggestionInput, DeleteBranchProtectionRuleInput, DeleteIssueInput, DeleteProjectCardInput, DeleteProjectColumnInput, DeleteProjectInput, DeletePullRequestReviewCommentInput, DeletePullRequestReviewInput, DeploymentOrder, DismissPullRequestReviewInput, DraftPullRequestReviewComment, GistOrder, ImportProjectInput, InviteBusinessAdminInput, InviteBusinessBillingManagerInput, IssueOrder, LanguageOrder, LockLockableInput, MarkPullRequestReadyForReviewInput, MergePullRequestInput, MilestoneOrder, MinimizeCommentInput, MoveProjectCardInput, MoveProjectColumnInput, PinIssueInput, ProjectCardImport, ProjectColumnImport, ProjectOrder, PullRequestOrder, ReactionOrder, RefOrder, RegenerateBusinessIdentityProviderRecoveryCodesInput, ReleaseOrder, RemoveBusinessAdminInput, RemoveBusinessBillingManagerInput, RemoveBusinessIdentityProviderInput, RemoveOutsideCollaboratorInput, RemoveReactionInput, RemoveStarInput, ReopenPullRequestInput, RepositoryOrder, RequestReviewsInput, ResolveReviewThreadInput, SecurityAdvisoryIdentifierFilter, SecurityAdvisoryOrder, SecurityVulnerabilityOrder, SetBusinessIdentityProviderInput, StarOrder, SubmitPullRequestReviewInput, TeamMemberOrder, TeamOrder, TeamRepositoryOrder, UnlockLockableInput, UnminimizeCommentInput, UnpinIssueInput, UnresolveReviewThreadInput, UpdateBranchProtectionRuleInput, UpdateBusinessAllowPrivateRepositoryForkingSettingInput, UpdateBusinessDefaultRepositoryPermissionSettingInput, UpdateBusinessMembersCanChangeRepositoryVisibilitySettingInput, UpdateBusinessMembersCanCreateRepositoriesSettingInput, UpdateBusinessMembersCanDeleteIssuesSettingInput, UpdateBusinessMembersCanDeleteRepositoriesSettingInput, UpdateBusinessMembersCanInviteCollaboratorsSettingInput, UpdateBusinessOrganizationProjectsSettingInput, UpdateBusinessProfileInput, UpdateBusinessRepositoryProjectsSettingInput, UpdateBusinessTeamDiscussionsSettingInput, UpdateBusinessTwoFactorAuthenticationRequiredSettingInput, UpdateProjectCardInput, UpdateProjectColumnInput, UpdateProjectInput, UpdatePullRequestInput, UpdatePullRequestReviewCommentInput, UpdatePullRequestReviewInput, UpdateSubscriptionInput, UpdateTopicsInput, UserStatusOrder.
 type Input interface{}
 
 // AcceptBusinessMemberInvitationInput is an autogenerated input type of AcceptBusinessMemberInvitation.
@@ -274,11 +274,10 @@ type CreatePullRequestInput struct {
 	// The Node ID of the repository. (Required.)
 	RepositoryID ID `json:"repositoryId"`
 	// The name of the branch you want your changes pulled into. This should be an existing branch
-	// on the current repository. You cannot update the base branch on a pull request to point
-	// to another repository. . (Required.)
+	// on the current repository. You cannot update the base branch on a pull request to point to another repository. . (Required.)
 	BaseRefName String `json:"baseRefName"`
 	// The name of the branch where your changes are implemented. For cross-repository pull requests
-	// in the same network, namespace `head_ref_name` with a user like this: `username:branch`. (Required.)
+	// in the same network, namespace `head_ref_name` with a user like this: `username:branch`. . (Required.)
 	HeadRefName String `json:"headRefName"`
 	// The title of the pull request. (Required.)
 	Title String `json:"title"`
@@ -287,6 +286,8 @@ type CreatePullRequestInput struct {
 	Body *String `json:"body,omitempty"`
 	// Indicates whether maintainers can modify the pull request. (Optional.)
 	MaintainerCanModify *Boolean `json:"maintainerCanModify,omitempty"`
+	// Indicates whether this pull request should be a draft. (Optional.)
+	Draft *Boolean `json:"draft,omitempty"`
 	// A unique identifier for the client performing the mutation. (Optional.)
 	ClientMutationID *String `json:"clientMutationId,omitempty"`
 }
@@ -470,6 +471,15 @@ type LockLockableInput struct {
 
 	// A reason for why the issue or pull request will be locked. (Optional.)
 	LockReason *LockReason `json:"lockReason,omitempty"`
+	// A unique identifier for the client performing the mutation. (Optional.)
+	ClientMutationID *String `json:"clientMutationId,omitempty"`
+}
+
+// MarkPullRequestReadyForReviewInput is an autogenerated input type of MarkPullRequestReadyForReview.
+type MarkPullRequestReadyForReviewInput struct {
+	// ID of the pull request to be marked as ready for review. (Required.)
+	PullRequestID ID `json:"pullRequestId"`
+
 	// A unique identifier for the client performing the mutation. (Optional.)
 	ClientMutationID *String `json:"clientMutationId,omitempty"`
 }
@@ -1031,7 +1041,8 @@ type UpdatePullRequestInput struct {
 	// The Node ID of the pull request. (Required.)
 	PullRequestID ID `json:"pullRequestId"`
 
-	// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. . (Optional.)
+	// The name of the branch you want your changes pulled into. This should be an existing branch
+	// on the current repository. . (Optional.)
 	BaseRefName *String `json:"baseRefName,omitempty"`
 	// The title of the pull request. (Optional.)
 	Title *String `json:"title,omitempty"`
