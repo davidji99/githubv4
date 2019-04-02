@@ -8,6 +8,6 @@
 // opportunities for improvement are discovered; it is not yet frozen.
 //
 // For now, see README for more details.
-package githubv4 // import "github.com/shurcooL/githubv4"
+package githubv4 // import "github.com/davidji99/githubv4"
 
 //go:generate go run gen.go

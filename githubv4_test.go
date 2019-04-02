@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/shurcooL/githubv4"
+	"github.com/davidji99/githubv4"
 )
 
 func TestNewClient_nil(t *testing.T) {

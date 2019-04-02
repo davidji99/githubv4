@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/shurcooL/githubv4"
+	"github.com/davidji99/githubv4"
 )
 
 func TestURI_MarshalJSON(t *testing.T) {

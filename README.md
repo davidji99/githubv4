@@ -1,7 +1,7 @@
 githubv4
 ========
 
-[![Build Status](https://travis-ci.org/shurcooL/githubv4.svg?branch=master)](https://travis-ci.org/shurcooL/githubv4) [![GoDoc](https://godoc.org/github.com/shurcooL/githubv4?status.svg)](https://godoc.org/github.com/shurcooL/githubv4)
+[![Build Status](https://travis-ci.org/shurcooL/githubv4.svg?branch=master)](https://travis-ci.org/shurcooL/githubv4) [![GoDoc](https://godoc.org/github.com/davidji99/githubv4?status.svg)](https://godoc.org/github.com/davidji99/githubv4)
 
 Package `githubv4` is a client library for accessing GitHub GraphQL API v4 (https://developer.github.com/v4/).
 
@@ -22,7 +22,7 @@ Installation
 `githubv4` requires Go version 1.8 or later.
 
 ```bash
-go get -u github.com/shurcooL/githubv4
+go get -u github.com/davidji99/githubv4
 ```
 
 Usage
@@ -400,7 +400,7 @@ Directories
 
 | Path                                                                                      | Synopsis                                                                            |
 |-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| [example/githubv4dev](https://godoc.org/github.com/shurcooL/githubv4/example/githubv4dev) | githubv4dev is a test program currently being used for developing githubv4 package. |
+| [example/githubv4dev](https://godoc.org/github.com/davidji99/githubv4/example/githubv4dev) | githubv4dev is a test program currently being used for developing githubv4 package. |
 
 License
 -------

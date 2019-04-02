@@ -14,7 +14,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/shurcooL/githubv4"
+	"github.com/davidji99/githubv4"
 	"golang.org/x/oauth2"
 )
 
