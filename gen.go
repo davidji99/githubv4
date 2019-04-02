@@ -65,7 +65,12 @@ func loadSchema(githubToken string) (schema interface{}, err error) {
 	if err != nil {
 		return nil, err
 	}
+
 	req.Header.Set("Authorization", "bearer "+githubToken)
+
+	// Add Headers for developer previews
+	req.Header.Add("Accept", "application/vnd.github.shadow-cat-preview+json") // Draft Pull Request Preview
+
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
